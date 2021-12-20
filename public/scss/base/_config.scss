@@ -1,0 +1,57 @@
+$black: rgba(0,0,0, .5);
+$grey: #e3e9ed;
+
+@font-face {
+    font-family: Unica One;
+    src: url("../../../public/dist/fonts/UnicaOne-Regular.ttf");   //  ../../../public/dist/fonts/Copperplate.ttf
+}
+
+@font-face {
+    font-family: Mrs Saint;
+    src: url("../../../public/dist/fonts/MrsSaintDelafield-Regular.ttf");   //  ../../../public/dist/fonts/Copperplate.ttf
+}
+
+@font-face {
+    font-family: Euclid;
+    src: url("../../../public/dist/fonts/EuclidCircularA-Medium.ttf");   //  ../../../public/dist/fonts/Copperplate.ttf
+}
+
+@font-face {
+    font-family: Karla;
+    src: url("../../../public/dist/fonts/Karla-Regular.ttf");   //  ../../../public/dist/fonts/Copperplate.ttf
+}
+
+// END FONTS
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin transition-ease-slow {
+    transition: all 1.2s ease-in-out;
+}
+
+
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @media screen and (min-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin media-xll {
+    @media screen and (min-width: 2400px) {
+        @content;
+    }
+}

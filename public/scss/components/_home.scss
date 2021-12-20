@@ -1,0 +1,212 @@
+.home {
+
+    &_header {
+        text-align: center;
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        &-h3 {
+            margin-top: 1rem;
+        }
+    }
+
+    &_action {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &Post, &Search {
+            display: flex;
+            justify-content: center;
+            align-items: space-between;
+            font-size: .9rem;
+        }
+
+        .buttonPost, .buttonSearch {
+            background-color: white;
+            border: 2px solid black;
+            padding: .5rem 1rem;
+            cursor: pointer;
+            font-family: 'Karla';
+            text-decoration: none;
+            color: black;
+
+        }
+
+        &Search {
+            margin-top: 1rem;
+        }
+
+
+        &Post .buttonPost {
+            margin-left: .5rem;
+
+        }
+
+        &Search .buttonSearch {
+            margin-left: .5rem;
+
+        }
+    }
+
+    &_sectionDogs {
+        margin: 0 auto;
+        width: 95vw;
+
+        h1 {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .containerDogs {
+            margin-top: 40px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 90px);
+            column-gap: 5px;
+            row-gap: 5px;
+
+            &_element {
+                width: 100px;
+                height: 300px;
+                background-color: red;
+            }
+        }
+
+    }
+
+    &_sectionCats {
+        margin: 0 auto;
+        width: 95vw;
+
+        h1 {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .containerCats {
+            height: 800px;
+            margin-top: 40px;
+            display: grid;
+            grid-template-rows: 50% 50%;
+            grid-auto-flow: column;
+            overflow-x: auto;
+            overflow-y: hidden;
+            column-gap: 30px;
+            row-gap: 5px;
+            scroll-behavior: smooth;
+
+            &_element {
+                height: 350px;
+                width: 350px;
+                box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+                background-color: white;
+            }
+
+            &_imgContainer {
+                height: 200px;
+            }
+            &_img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+
+            &_container {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            &_wrapperInitial {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            &_wrapperFinish {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &_name {
+                text-align: center;
+                margin-top: 5px;
+            }
+
+            &_description {
+                margin-top: 10px;
+                text-align: center;
+                font-size: .9rem;
+            }
+
+            &_contact {
+                position: relative;
+                text-align: center;
+                width: 100%;
+
+                &Cross {
+                    position: absolute;
+                    right: 0;
+                    top:0;
+                    width: 40px;
+                    height: 40px;
+                    padding: 10px 10px 0 0;
+                    cursor: pointer;
+
+                    &Img {
+                        width: 100%;
+                        height: 100%;
+
+
+                    }
+                }
+
+                &H2 {
+                    & span {
+                        display: block;
+                        line-height: 1.5rem;
+                    }
+                }
+
+                &Span1 {
+                    padding-top: .3rem;
+                    font-size: 1.1rem;
+                }
+
+                &Span2 {
+                    font-size: .9rem;
+                }
+            }
+            &_buttonFound {
+                margin-top: 15px;
+                text-align: center;
+                background-color: #fff;
+                padding: 10px 20px;
+                font-size: .9rem;
+                font-family: 'Karla';
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}

@@ -1,0 +1,27 @@
+@import 'base/config';
+@import 'base/responsive';
+
+@import 'components/header';
+@import 'components/home';
+@import 'components/formPost';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Euclid', Courier, monospace;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+//?KeyFrames
+

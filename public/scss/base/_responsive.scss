@@ -1,0 +1,40 @@
+// @include media-md {
+//     .containerCats {
+//         row-gap: 70px;
+//     }
+//     .cart-ovelay__cont {
+//         width: 100vw;
+//         min-width: 450px;
+//     }
+// }
+
+// @include media-lg {
+//     .grid {
+
+//         // gap: 70px;
+//     }
+// }
+
+// @include media-xl {
+//     .container {
+//         min-width: 97%;
+//         margin: auto;
+//     }
+//     .containerCats {
+//     grid-template-columns: repeat(3, 1fr);
+//     grid-gap: 40px;
+//         //Eliminar si hay mas de 2 elementos en el último row
+//         & > :nth-child(3n-1):nth-last-of-type(1) {
+//             margin-left: 40%;
+//         }
+//         & > :nth-child(3n-2):nth-last-of-type(2) {
+//             margin-left: 40%;
+//         }
+//     }
+// }
+
+// @include media-xll {
+//     .container {
+//         max-width: 2200px;
+//     }
+// }

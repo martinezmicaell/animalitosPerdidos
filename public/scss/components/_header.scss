@@ -1,0 +1,38 @@
+.header {
+    width: 100%;
+    height: 66px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid black;
+    padding-left: 32px;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__p {
+        padding-left: .5rem;
+    }
+
+    &__img {
+        margin-left: .3rem;
+        color: purple;
+    }
+
+    &__menuIcon {
+        width: 66px;
+        height: 66px;
+        padding: 15px 25px 15px 15px;
+        cursor: pointer;
+    }
+
+
+    //*Falta el NAV al hacer click en el Button de Hamburguesa
+}
+
+
+
