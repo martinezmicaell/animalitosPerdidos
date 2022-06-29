@@ -1,3 +1,5 @@
+import { validarPost } from './validarPost.js';
+
 function formPost() {
     //$ Al hacer click en la cruz
 
@@ -26,7 +28,7 @@ function formPost() {
         $element.classList.add("opacityOn");
         // const file = e.target.files[0];
         // console.log(input);
-        const file = formData.get(input.name);
+        const file = formData.get(input.name); //nombre del archivo
         const image = URL.createObjectURL(file);
 
         //Removiendo el Label
@@ -43,23 +45,37 @@ function formPost() {
     //?Al cambiar cada imagen, previsualizarla llamando a renderImages
     $inputsImage.forEach(input => {
         input.addEventListener("change", (event) => {
-            const formData = new FormData($formPost); //return object formData
+            let formData = new FormData($formPost);
+            // console.log(formData) //return object formData
             renderImages(formData, input);
         })
     })
 
-    $formPost.addEventListener("submit", (event) => {
+    $formPost.addEventListener("submit", async (event) => {
         event.preventDefault();
-        const formData = new FormData($formPost); //return object formData
-        renderImages(formData)
+        let formData = new FormData($formPost); //return object formData
+
+        //Mando el Post al backend y lo proceso alla
+        let response = await fetch('/gatitos', {
+            method: 'POST',
+            body: formData,
+        })
+
+        //transition
+        let result = response.json()
+        alert(result)
+
+        hideModalByButtonPost();
     })
     //!Desarrollar desde aca, 9:17 formdata leyendo y enviando archivos al server
 
 }
 
+
 const $modal = document.querySelector(".modalPost")
 const $modalContainer = document.querySelector(".modalPost__container");
-const hideModal = () => {
+
+const hideModalByCross = () => {
     const $cross = document.querySelector(".modalPost__cross");
     $cross.addEventListener("click", (event) => {
         $modal.classList.add("close-modalPost");
@@ -67,17 +83,41 @@ const hideModal = () => {
         setTimeout(() => {
             $modal.style.display = "none";
         }, 450)
+        // window.location.href = '/';
     })
 }
-hideModal();
+hideModalByCross();
 
+//!POR QUE NO DESAPARECE AL POSTEAR
+const hideModalByButtonPost = () => {
+    const $postearButton = document.querySelector("#sendPost");
+    $postearButton.addEventListener("click", (e) => {
+        $modal.classList.add("close-modalPost");
+        $modalContainer.classList.add("close-modalPost__container");
+        setTimeout(() => {
+            $modal.style.display = "none";
+        }, 450)
+    })
+}
 const showModal = () => {
     const $buttonPost = document.querySelector(".buttonPost");
     $buttonPost.addEventListener("click", (event) => {
-        $modal.style.display = "block";
+        $modal.style.display = "flex";
         $modal.classList.add('visible');
 
     })
 }
 showModal();
+
+const getValidate = () => {
+    const $sendPost = document.querySelector('#sendPost');
+
+    $sendPost.addEventListener('click', () => {
+        // validarPost();
+        hideModalByButtonPost();
+    })
+}
+
+getValidate()
+
 export { formPost };

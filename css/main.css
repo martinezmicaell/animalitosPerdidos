@@ -1,21 +1,21 @@
 @font-face {
   font-family: Unica One;
-  src: url("../../../public/dist/fonts/UnicaOne-Regular.ttf");
+  src: url("/dist/fonts/UnicaOne-Regular.ttf");
 }
 
 @font-face {
   font-family: Mrs Saint;
-  src: url("../../../public/dist/fonts/MrsSaintDelafield-Regular.ttf");
+  src: url("/dist/fonts/MrsSaintDelafield-Regular.ttf");
 }
 
 @font-face {
   font-family: Euclid;
-  src: url("../../../public/dist/fonts/EuclidCircularA-Medium.ttf");
+  src: url("/dist/fonts/EuclidCircularA-Medium.ttf");
 }
 
 @font-face {
   font-family: Karla;
-  src: url("../../../public/dist/fonts/Karla-Regular.ttf");
+  src: url("/dist/fonts/Karla-Regular.ttf");
 }
 
 .header {
@@ -175,7 +175,7 @@
 }
 
 .home_sectionCats .containerCats {
-  height: 800px;
+  height: 850px;
   margin-top: 40px;
   display: -ms-grid;
   display: grid;
@@ -191,7 +191,7 @@
 }
 
 .home_sectionCats .containerCats_element {
-  height: 350px;
+  height: 380px;
   width: 350px;
   -webkit-box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
           box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
@@ -200,13 +200,6 @@
 
 .home_sectionCats .containerCats_imgContainer {
   height: 200px;
-}
-
-.home_sectionCats .containerCats_img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .home_sectionCats .containerCats_container {

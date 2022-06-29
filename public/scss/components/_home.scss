@@ -72,7 +72,7 @@
 
             &_element {
                 width: 100px;
-                height: 300px;
+                height: 350px;
                 background-color: red;
             }
         }
@@ -89,7 +89,7 @@
         }
 
         .containerCats {
-            height: 800px;
+            height: 850px;
             margin-top: 40px;
             display: grid;
             grid-template-rows: 50% 50%;
@@ -101,7 +101,7 @@
             scroll-behavior: smooth;
 
             &_element {
-                height: 350px;
+                height: 400px;
                 width: 350px;
                 box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
                 background-color: white;
@@ -109,12 +109,77 @@
 
             &_imgContainer {
                 height: 200px;
+
+                & .carousel {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+
+
+                    & ul {
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                    }
+                    & .carousel-button {
+                        position: absolute;
+                        z-index: 2;
+                        background: none;
+                        border: none;
+                        font-size: 4rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: rgba(255,255,255, .5);
+                        cursor: pointer;
+                        border-radius: 0 .5rem;
+                        background-color: rgba(0,0,0, .1);
+
+                        &:hover, &:focus {
+                            color: white;
+                            background-color: rgba(0,0,0, .3);
+                        }
+
+                        &:focus {
+                            outline: 1px solid black;
+                        }
+
+                        &.prev {
+                            left: 1rem;
+                        }
+
+                        &.next {
+                            right: 1rem;
+                        }
+                    }
+
+                    & .slide {
+                        position: absolute;
+                        inset: 0;
+                        opacity: 0;
+                        transition: 200ms opacity ease-in-out;
+                        transition-delay: 200ms;
+
+                        & > img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+
+                        &[data-active] {
+                            opacity: 1;
+                            z-index: 1;
+                            transition-delay: 0ms;
+                        }
+                    }
+                }
             }
-            &_img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+            // &_img {
+            //     width: 100%;
+            //     height: 100%;
+            //     object-fit: cover;
+            // }
 
 
             &_container {
@@ -135,7 +200,7 @@
 
             &_wrapperFinish {
                 width: 100%;
-                display: flex;
+                display: none;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -147,7 +212,7 @@
             }
 
             &_description {
-                margin-top: 10px;
+                margin: 10px 20px 0 20px;
                 text-align: center;
                 font-size: .9rem;
             }
@@ -209,4 +274,8 @@
 
 .d-block {
     display: block;
+}
+
+.wrapperFinish {
+    display: none;
 }

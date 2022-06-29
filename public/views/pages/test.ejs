@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="home_sectionCats" id="home_sectionCats gatitos">
+        <h1>Gatitos Perdidos</h1>
+        <div class="containerCats">
+            <!-- Esto va en el js -->
+            <% results.forEach(item=> { %>
+
+                <div class="containerCats_element" tabindex="${i}">
+                    <figure class="containerCats_imgContainer" tabindex="${i}">
+                        <!-- add carousel -->
+                        <div class="carousel" data-carousel>
+                            <button class="carousel-button prev" data-carousel-button="prev">&#60;</button>
+                            <button class="carousel-button next" data-carousel-button="next">&#62;</button>
+                            <ul data-slides>
+                                <li class="slide" data-active>
+                                    <img class="containerCats_img" loading="lazy" src="data:item/<%=item.img.contentType%>;base64,
+                                <%=item.img.data.toString('base64')%>" alt="">
+                                </li>
+                                <li class="slide">
+                                    <img class="containerCats_img" loading="lazy" src="data:item/<%=item.img2.contentType%>;base64,
+                                <%=item.img2.data.toString('base64')%>" alt="">
+                                </li>
+                                <li class="slide">
+                                    <img class="containerCats_img" loading="lazy" src="data:item/<%=item.img3.contentType%>;base64,
+                                <%=item.img3.data.toString('base64')%>" alt="">
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- fin carrousel -->
+
+                    </figure>
+                    <div class="containerCats_container">
+                        <div class="containerCats_wrapperInitial">
+                            <h3 class="containerCats_name">
+                                <%= item.name %>
+                            </h3>
+                            <p class="containerCats_description">
+                                <%= item.desc %>
+                            </p>
+                            <button class="containerCats_buttonFound">Lo encontraste?</button>
+                        </div>
+                        <div class="containerCats_wrapperFinish">
+                            <div class="containerCats_contact">
+                                <div class="containerCats_contactCross">
+                                    <img class="containerCats_contactCrossImg" src="./dist/img/icons/cross-bground.svg"
+                                        alt="">
+                                </div>
+                                <h2 class="containerCats_contactH2"><span class="containerCats_contactSpan1">Contacta a
+                                        los dueños!</span><span class="containerCats_contactSpan2">Ellos te lo
+                                        agradecerán 😄</span> </h2>
+                                <div class="social">
+                                    <a class="containerCats_whatsapp"
+                                        href="https://api.whatsapp.com/send?phone=<%= item.phone %>" target="_blank">
+                                        <img loading="lazy" src="./dist/img/icons/whatsapp.svg" alt="">
+                                    </a>
+                                    <p class="containerCats_phone">
+                                        <%= item.phone %>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+
+                    <div id="request-target"></div>
+        </div>
+    </section>
+</body>
+
+</html>

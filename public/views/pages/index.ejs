@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animalitos Perdidos</title>
+    <base href="/">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="shortcut icon" type="image/ico" href="./dist/img/patita-ico.ico" />
+    <script src="./dist/js/scrollLoad.js" defer></script>
+</head>
+
+<body>
+
+
+    <header class="header">
+        <a aria-label="Ir al inicio" href="/">
+            <div class="header_logo">
+                <p>AnimalitossS</p>
+                <p class="header_p">Perdidos</p>
+            </div>
+            <img class="header_img" src="/dist/img/patita_logo.svg" width="36px" height="32px" alt="">
+        </a>
+
+        <img src="/dist/img/icon_bars.svg" class="header_menuIcon" alt="" width="24px" height="15px">
+    </header>
+    <div class="home">
+        <section class="home_header">
+            <h3 class="home_header-h3">Animalitos Perdidos nació con el propósito de que las personas se ayuden
+                mutuamente para poder encontrar animales que se perdieron</h3>
+            <h3>
+
+            </h3>
+            <h3>
+            </h3>
+            <h3>
+            </h3>
+        </section>
+
+        <section class="home_action">
+            <div class="home_actionPost">
+                <h2>Perdí a mi Animalito</h2>
+                <a href="#modalPost" class="buttonPost">Postear</a>
+            </div>
+            <div class="home_actionSearch">
+                <h2>Encontré a uno</h2>
+                <a href="#home_sectionCats" class="buttonSearch">Buscar</a>
+            </div>
+        </section>
+
+
+        <!-- FORM -->
+        <div class="modalPost" id="modalPost">
+
+            <div class="modalPost__container">
+                <a href="#" class="modalPost__cross">
+                    <img class="modalPost__crossImg" src="./dist/img/icons/cross-bground.svg" alt="">
+                </a>
+                <label for="selectAnimal" class="modalPost__label" tabindex="0">Que animal se te ha
+                    perdido?</label>
+
+                <form id="formPost" class="form modalPost__form" action="/" method="POST" enctype="multipart/form-data">
+
+                    <select class="modalPost__formSelect" id="selectAnimal" name="selectAnimal" required>
+                        <option value="perro" selected>Perro</option>
+                        <option value="gato">Gato</option>
+                    </select>
+
+                    <label for="nameAnimal" class="modalPost__label">Responde al nombre de:</label>
+                    <input aria-label="Nombre" id="nameAnimal" class="input inputName" type="text" placeholder='Nombre'
+                        name="nameAnimal" autocomplete="off" />
+
+
+                    <div class="modalPost__containerImages">
+                        <label for="modalPost__wrapperFlex" class="modalPost__label">Sube imágenes de tu
+                            animalito
+                            perdido</label>
+
+                        <div class="modalPost__wrapperFlex" id="modalPost__wrapperFlex">
+                            <div class="modalPost__elementImagePreview">
+                                <input type="file" name="imageAnimal1" class="inputAnimal" id="animal1"
+                                    accept="image/png, image/jpeg">
+                                <label for="animal1">
+                                    <img id="animalito1" class="previewAnimal previewAnimal1" src="" loading="lazy"
+                                        alt="">
+                                    <img src="./dist/img/icons/add-a-photoGreen.svg" width="35px" height="35px" alt="">
+                                    <span>Agregar foto</span>
+                                </label>
+                            </div>
+                            <div class="modalPost__elementImagePreview">
+                                <input type="file" name="imageAnimal2" class="inputAnimal" id="animal2"
+                                    accept="image/png, image/jpeg">
+                                <label for="animal2">
+                                    <img id="animalito2" class="previewAnimal previewAnimal2" src="" loading="lazy"
+                                        alt="">
+                                    <img src="./dist/img/icons/add-a-photoGreen.svg" width="35px" height="35px" alt="">
+                                    <span>Agregar foto</span>
+                                </label>
+                            </div>
+                            <div class="modalPost__elementImagePreview">
+                                <input type="file" name="imageAnimal3" class="inputAnimal" id="animal3"
+                                    accept="image/png, image/jpeg">
+                                <label for="animal3">
+                                    <img id="animalito3" class="previewAnimal previewAnimal3" src="" loading="lazy"
+                                        alt="">
+                                    <img src="./dist/img/icons/add-a-photoGreen.svg" width="35px" height="35px" alt="">
+                                    <span>Agregar foto</span>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <label for="message" class="modalPost__label">Aporta información útil para facilitar su
+                        búsqueda!</label>
+                    <textarea aria-label="Descripción" class="inputDesc" id="message" name="descAnimal" id="" cols="30"
+                        rows="5"
+                        placeholder='Ej: Se perdió en la Zona del centro de Regina, llevaba un collar rojo y es de tamaño mediano '
+                        autocomplete="off" maxlength="200"></textarea>
+
+
+                    <label for="modalPost__phone" class="modalPost__label"> Ingresa tu numero de
+                        teléfono</label>
+                    <input id="modalPost__phone" name="phoneAnimal" class="input inputPhone" type="tel"
+                        inputmode="numeric" pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+                        value="+54" autocomplete="section-mobile tel-national" minlength="12" maxlength="16"
+                        placeholder="+54 2984734813">
+
+                    <button class="buttonPost" id="sendPost" type="submit">Postear</button>
+                </form>
+
+            </div>
+        </div>
+
+
+        <section class="home_sectionCats" id="home_sectionCats gatitos">
+            <h1>Gatitos Perdidos</h1>
+            <div class="containerCats">
+                <!-- Esto va en el js -->
+                <% results.forEach(item=> { %>
+
+                    <div class="containerCats_element" tabindex="">
+                        <figure class="containerCats_imgContainer" tabindex="">
+                            <!-- add carousel -->
+                            <div class="carousel" data-carousel>
+                                <button class="carousel-button prev" data-carousel-button="prev">&#60;</button>
+                                <button class="carousel-button next" data-carousel-button="next">&#62;</button>
+                                <ul data-slides>
+                                    <li class="slide" data-active>
+                                        <img class="containerCats_img" loading="lazy" src="<%=item.img.url%>" alt="">
+                                    </li>
+                                    <li class="slide">
+                                        <img class="containerCats_img" loading="lazy" src="<%=item.img2.url%>" alt="">
+                                    </li>
+                                    <li class="slide">
+                                        <img class="containerCats_img" loading="lazy" src="<%=item.img3.url%>" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- fin carrousel -->
+
+                        </figure>
+                        <div class="containerCats_container">
+                            <div class="containerCats_wrapperInitial">
+                                <h3 class="containerCats_name">
+                                    <%= item.name %>
+                                </h3>
+                                <p class="containerCats_description">
+                                    <%= item.desc %>
+                                </p>
+                                <button class="containerCats_buttonFound">Lo encontraste?</button>
+                            </div>
+                            <div class="containerCats_wrapperFinish">
+                                <div class="containerCats_contact">
+                                    <div class="containerCats_contactCross">
+                                        <img class="containerCats_contactCrossImg"
+                                            src="./dist/img/icons/cross-bground.svg" alt="">
+                                    </div>
+                                    <h2 class="containerCats_contactH2"><span
+                                            class="containerCats_contactSpan1">Contacta a los dueños!</span><span
+                                            class="containerCats_contactSpan2">Ellos te lo agradecerán 😄</span> </h2>
+                                    <div class="social">
+                                        <a class="containerCats_whatsapp"
+                                            href="https://api.whatsapp.com/send?phone=<%= item.phone %>"
+                                            target="_blank">
+                                            <img loading="lazy" src="./dist/img/icons/whatsapp.svg" alt="">
+                                        </a>
+                                        <p class="containerCats_phone">
+                                            <%= item.phone %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+
+                        <!-- <div id="request-target"
+                            style="width:100px;height:100px;background-color: green;margin-left: 50px;"></div> -->
+            </div>
+        </section>
+
+
+        <section class="home_sectionDogs">
+            <h1>Perritos perdidos</h1>
+            <div class="containerDogs">
+
+            </div>
+
+        </section>
+
+
+
+    </div>
+    <script type="module" src="/dist/js/render.js"></script>
+
+</body>
+
+</html>

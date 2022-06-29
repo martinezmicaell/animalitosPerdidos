@@ -9,15 +9,18 @@ const catsScheme = new mongoose.Schema(
             type: String,
         },
         img: {
-            data: Buffer,
+            filename: String,
+            url: String,
             contentType: String,
         },
         img2: {
-            data: Buffer,
+            filename: String,
+            url: String,
             contentType: String,
         },
         img3: {
-            data: Buffer,
+            filename: String,
+            url: String,
             contentType: String,
         },
         desc: {
@@ -26,8 +29,10 @@ const catsScheme = new mongoose.Schema(
         phone: {
             type: String,
         }
-    }
-);
+    }, {
+    timestamps: true,
+    versionKey: false
+});
 
 //? Los modelos se usan en los Controladores
 module.exports = new mongoose.model("cats", catsScheme);

@@ -1,10 +1,13 @@
 import { formPost } from './formPost.js';
-
-
+import { carousel } from './carousel.js'
+// import { getFormRandom } from './dataRandomInForm.js'
 //?Verificar si es de Villa Regina, si no mostrar el modal "Actualmente Animalitos Perdidos es apta para la ciudad de Villa Regina, lo sentimos :(";
 
 
+
 formPost();
+// getFormRandom();
+carousel();
 
 //$Por cada button de cada animal "Lo encontraste?"
 const clickInPerdido = () => {
@@ -21,20 +24,20 @@ const clickInPerdido = () => {
             console.log(WrapperFinish);
             WrapperInitial.style.display = "none";
             WrapperFinish.style.display = "flex";
-            WrapperFinish.innerHTML = `
-            <div class="containerCats_contact">
-                <div class="containerCats_contactCross">
-                    <img class="containerCats_contactCrossImg" src="./dist/img/icons/cross-bground.svg" alt="">
-                </div>
-                <h2 class="containerCats_contactH2"><span class="containerCats_contactSpan1">Contacta a los dueños!</span><span class="containerCats_contactSpan2">Ellos te lo agradecerán 😄</span> </h2>
-                <div class="social">
-                    <a class="containerCats_whatsapp" href="https://api.whatsapp.com/send?phone=+542984279430" target="_blank">
-                        <img src="./dist/img/icons/whatsapp.svg" alt="">
-                    </a>
-                    <p class="containerCats_phone">+54 2984734813</p>
-                </div>
-            </div>
-            `;
+            // WrapperFinish.innerHTML = `
+            // <div class="containerCats_contact">
+            //     <div class="containerCats_contactCross">
+            //         <img class="containerCats_contactCrossImg" src="./dist/img/icons/cross-bground.svg" alt="">
+            //     </div>
+            //     <h2 class="containerCats_contactH2"><span class="containerCats_contactSpan1">Contacta a los dueños!</span><span class="containerCats_contactSpan2">Ellos te lo agradecerán 😄</span> </h2>
+            //     <div class="social">
+            //         <a class="containerCats_whatsapp" href="https://api.whatsapp.com/send?phone=+542984279430" target="_blank">
+            //             <img src="./dist/img/icons/whatsapp.svg" alt="">
+            //         </a>
+            //         <p class="containerCats_phone">+54 2984734813</p>
+            //     </div>
+            // </div>
+            // `;
 
             clickInCross();
             //?Podria agregar un efecto de transicion de desaparecer
